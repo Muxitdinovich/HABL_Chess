@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HABL-Chess</title>
+    <link rel="icon" href="./img/icon.jpg">
+    <link rel="stylesheet" type="text/css" href="./css/semantic.min.css">
+    <link rel="stylesheet" href="./css/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <audio id="myAudio">
+        <source src="./mp3/soundMove.mp3" type="audio/mpeg">
+        Brauzeringiz audio elementni qo'llab-quvvatlamaydi.
+    </audio>
+    <audio id="messageTone">
+        <source src="./mp3/insight.mp3" type="audio/mpeg">
+        Brauzeringiz audio elementni qo'llab-quvvatlamaydi.
+    </audio>
+   
+    <div>
+        <div style="margin: 0; border-bottom: 4px solid gray; padding: 3px 0; " class="ui secondary menu">
+            <img src="./img/icon.png" style="width:80px;height:80px;">
+            <h2 style="text-decoration: underline;">HABL-Chess</h2>
+            <div class="right menu">   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="gameMode">
+            <h1 style="text-align: center; margin: 10px; font-size: 35px;">HABL-Chess</h1>
+            <div style="text-align:center;">
+                <button class="game ui black button " id="singlePlayer">Boshlash</button>
+            </div>
+        </div>
+
+        <div id="joinFormDiv" style="display: none;">
+            <form id="joinForm">
+                <h1 style="text-align: center; margin: 10px; font-size: 35px;">Boshlang</h1>
+                <div style="text-align:center;">
+                    <input class="formInput" type="text" placeholder="Name" style="padding: 10px;">
+                </div>
+                <div style="text-align:center;">
+                    <input class="formInput" type="text" placeholder="Room" style="padding: 10px;">
+                </div>
+                <div id="roomDropdownP" style="text-align:center;  height: 50px; margin: 10px; padding: 0 4px; ">
+                    <div id="roomDropdown" class="ui fluid search selection dropdown"
+                        style="border: 1px solid gray; width: 300px; margin:auto;">
+                        <input type="hidden" name="country">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Xona Tanlash</div>
+                        <div class="menu" id="dropRooms">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center;">
+                    <button class="game ui black button " id="joinButton">Qo'shilish</button>
+                </div>
+                <div style="text-align:center;">
+                    <p id="message"></p>
+                </div>
+            </form>
+        </div>
+
+   
+        <div>
+          
+            <div id="chessGame" style="display: none;">
+                <div id="statusPGN" style="text-align: center; display: none;">
+                    <div>
+                        <label>
+                            <h3><strong>HOLAT</strong></h3>
+                        </label>
+                        <div id="status">SIZNING NAVBATINGIZ</div>
+                    </div>
+                    <div>
+                        <label>
+                            <h3><strong>TARIX</strong></h3>
+                        </label>
+                        <div id="pgn" style="overflow: auto; white-space: nowrap; width: 500px; margin: auto;"></div>
+                    </div>
+                </div>
+                <div id="myBoard" style="width: 569px; margin: auto; margin-top: 10px; margin-bottom: 10px;"></div>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <a href="/" class="ui button black" style="width: 569px;">Restart</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="chat"
+        style=" background-color: white; display: none; text-align: right; position: fixed; bottom: 0; right: 0; width: 400px; margin-right: 10px; border: 2px solid black;">
+        <div class="ui button grey" style="border-radius: 0; width: 100%; padding: 15px; font-size: 16px;"
+            id="messageBox">
+            XABARLAR
+        </div>
+        <div id="chatBox" style="display: none; padding: 12px;">
+            <div id="chatContent" style="height: 240px; overflow-y: auto; word-break: break-all; ">
+           
+            </div>
+            <form style="margin-bottom: 0;" class="ui form">
+                <div style="display: flex; justify-content: space-around;">
+                    <input class="form-control " id="inputMessage" type="text" placeholder="Enter a Message"
+                        style="margin-right: 10px;">
+                    <button class="ui black button" id="send">YUBORISH</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div
+        style="background-color: black; color: white; margin-top:auto; padding: 15px; text-align: center; font-size: 15px;">
+        <i>"Olomondan qoching. O'z fikringizni mustaqil ravishda qiling. Shaxmat donasi emas, shaxmatchi bo'ling"</i></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="./js/semantic.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"
+        integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz"
+        crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
