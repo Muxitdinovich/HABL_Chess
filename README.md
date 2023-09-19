@@ -1,8 +1,9 @@
 # HABL-Chess
  
-<p>
- 🌐 
-</p>
 
+<pre>
+ git clone https://github.com/Muxitdinovich/HABL_Chess.git
+</pre>
+https://hablgame.nicepage.io
  
 
